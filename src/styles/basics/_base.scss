@@ -1,0 +1,253 @@
+@charset "utf-8";
+
+/* general setting
+-----------------------------------------------------*/
+/*@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);*/
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+@font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 400
+}
+
+@font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Bold");
+    font-weight: bold
+}
+
+* {
+    outline: transparent;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    overflow-x: hidden;
+}
+
+body {
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /*font-family: "Noto Sans Japanese", "游ゴシック体", "Yu Gothic", "YuGothic", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;*/
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-weight: normal;
+    background: #fff;
+    color: #000;
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    transition-duration: 0.2s;
+    &:hover {
+        text-decoration: none;
+        color: currentColor;
+        opacity: 0.8;
+    }
+    &:focus {
+        outline: none;
+        text-decoration: none;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    li {
+        list-style: none;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.4;
+    font-weight: 700;
+    margin: 0;
+}
+
+p {
+    margin: 0px 0px 20px 0px;
+    padding: 0;
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+input[type="submit"] {
+    border: none;
+    transition-duration: 0.2s;
+}
+
+table {
+    border-spacing: inherit;
+    border-collapse: collapse;
+}
+dl,dt,dd {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* clearfix */
+
+.clearfix:after {
+    clear: both;
+    content: ' ';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+}
+.container {
+    max-width: 1130px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 15px;
+    box-sizing: border-box;
+}
+.page-header {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.page-main {
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+// .animation {
+//     opacity: 0;
+//     transform: translateY(40px);
+//     transition: 1.2s all cubic-bezier(0.23, 1, 0.32, 1);
+//     &.fadeInUp {
+//         opacity: 1;
+//         transform: translateY(0);
+//         position: relative;
+//         z-index: 5;
+//     }
+// }
+@media screen and (min-width: 769px) {
+    .only-pc {
+        display: inline-block !important;
+    }
+    .only-sp {
+        display: none !important;
+    }
+    #hambuger {
+        display: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 12px;
+        font-size: 1.2rem;
+        line-height: 1.8;
+        &.open {
+            overflow: hidden;
+        }
+    }
+    p {
+        margin: 0px 0px 15px 0px;
+        padding: 0;
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+    .only-pc {
+        display: none !important;
+    }
+    .only-sp {
+        display: inline-block !important;
+    }
+    /** Hamburger Menu **/
+    .nav-icon {
+        width: 33px;
+        height: 20px;
+        transform: rotate(0deg);
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        position: absolute;
+        right: 1rem;
+        top: 1.7rem;
+        span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            background: #7db827;
+            border-radius: 9px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+            &:nth-child(1) {
+                top: 0px;        
+            }
+            &:nth-child(2),
+            &:nth-child(3) {
+                top: 12px;        
+            }
+            &:nth-child(4) {
+                top: 24px;        
+            }
+        }
+        &.open {
+            span {
+                background: #7db827;
+                &:nth-child(1) {
+                    top: 12px;
+                    width: 0%;
+                    left: 50%;
+                }
+                &:nth-child(2) {
+                    transform: rotate(45deg);
+                }
+                &:nth-child(3) {
+                    transform: rotate(-45deg);
+                }
+                &:nth-child(4) {
+                    top: 12px;
+                    width: 0%;
+                    left: 50%;
+                }
+            }
+        }
+    }
+}

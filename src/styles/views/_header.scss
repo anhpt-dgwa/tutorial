@@ -1,0 +1,177 @@
+/** header area
+--------------------------------------- **/
+.page-header {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	width: 100%;
+	padding-left: 20px;
+	border-bottom: 1px solid #c0c6b8;
+	transition: all .3s ease-in-out;
+	&.fixed {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background: rgba(255, 255, 255, 0.9);
+		z-index: 9;
+	}
+}
+.site-logo {
+	width: 232px;
+	margin-right: auto;
+	align-self: center;
+	transition: all .3s ease-in-out;
+}
+.gnav {
+	align-self: center;
+}
+.menu {
+	display: flex;
+	flex-flow: row wrap;
+	padding-right: 20px;
+	li {
+		align-self: center;
+		transform: skewX(-25deg);
+		position: relative;
+		&:last-child {
+			border-right: 1px solid #d3d3d3;
+		}
+		a {
+			display: block;
+			font-size: 1.8rem;
+			color: #7db827;
+			text-align: center;
+			line-height: 1.2;
+			padding: 22px 25px;
+			transform: skewX(25deg);
+			position: relative;
+			&:after {
+				position: absolute;
+				content: '';
+				left: 0;
+				top: 0;
+				width: 1px;
+				height: 100%;
+				background: #d3d3d3;
+				transform: skewX(-25deg);
+			}
+			&:before {
+				position: absolute;
+				content: '';
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background: #7db827;
+				transform: skewX(-25deg);
+				z-index: -1;
+				transition-duration: 0.2s;
+				opacity: 0;
+				visibility: hidden;
+			}
+			span {
+				display: block;
+				font-size: 1.4rem;
+				color: #757474;
+				transition-duration: 0.2s;
+			}
+			&:hover {
+				color: #fff;
+				&:before {
+					opacity: 1;
+					visibility: visible;
+				}
+				span {
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 769px) and (max-width: 1050px) {
+	.page-header {
+		padding-left: 0;
+	}
+	.site-logo {
+		width: 160px;
+	}
+ 	.menu {
+ 		padding-right: 10px;
+ 		li {
+ 			a {
+ 				font-size: 1.3rem;
+ 				padding: 15px 15px;
+ 				span {
+ 					font-size: 1.2rem;
+ 				}
+ 			}
+ 		}
+ 	}  
+}
+@media screen and (min-width: 769px) {
+    .gnav {
+        display: block !important;
+    }
+}
+@media screen and (max-width: 768px) {
+	.page-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		padding: 1rem;
+		z-index: 9;
+		background: #fff;
+	}
+	.site-logo {
+		width: 170px;
+		&.hide {
+			visibility: visible;
+			opacity: 0;
+			z-index: -1;
+		}
+	}
+	.gnav {
+        width: 100%;
+        background: rgba(255,255,255,.97);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease-in-out;
+        z-index: -1;
+        &.open {
+        	opacity: 1;
+        	visibility: visible;
+        }
+    }
+    .menu {
+    	display: block;
+    	position: absolute;
+    	top: 10%;
+    	left: 0;
+    	width: 100%;
+    	height: calc(100% - 50px);
+    	padding: 0;
+    	overflow-y: auto;
+    	overflow-x: hidden;
+    	li {
+    		transform: skewX(0deg);
+    		border-bottom: 1px solid #d3d3d3;
+    		a {
+    			transform: skewX(0deg);
+    			&:after {
+    				width: 0;
+    				height: 0;
+    				background: transparent;
+    			}
+    		}
+    		&:last-child {
+    			text-align: center;
+    			border: none;
+    		}
+    	}
+    }
+}

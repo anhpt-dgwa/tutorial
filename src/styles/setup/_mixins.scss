@@ -1,0 +1,106 @@
+@charset "utf-8";
+// CSS Document
+
+$color_base: #161616;
+$color_main: #34576B;
+$color_gray: #B8B8B8;
+$color_light_gray: #E6E6E6;
+
+$design_width_pc: 1366;
+$design_width_sp: 375;
+$sp: 768px;
+$pc: 1366px;
+$tb: 1024px;
+$fz_pc: 16;
+$fz_sp: 14;
+$baseFont: 10;
+$lh: 1.857;
+$opacity: 0.55;
+
+// Z-index
+$z_Pagetop: 10;
+$z_Btn_Contact: 10;
+$z_Hbg: 101;
+$z_Header: 100;
+$z_Gnav: 99;
+
+
+// Font
+$mincho: "游明朝体","Yu Mincho",YuMincho,"Noto Serif JP","ヒラギノ明朝 Pro","Hiragino Mincho Pro","MS P明朝","MS PMincho",serif;
+$gothic: 'noto-sans-cjk-jp', 'YuGothic', "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", Meiryo, 'MS PGothic', sans-serif;
+
+$font_en: 'Jost', sans-serif;
+$font_w8: 'ヒラギノ角ゴ Std W8';
+
+$url : '../img/';
+
+@function per($design_width_psd) {
+   $per: percentage($design_width_psd/$design_width_pc);
+   @return #{$per};
+}
+
+@mixin txt($font-size, $line-height, $font-weight, $color) {
+   font-size: $font-size;
+   line-height: $line-height;
+   font-weight: $font-weight;
+   color: $color;
+}
+
+@mixin fz($sizeValue: 16) {
+   font-size: $sizeValue + px;
+   font-size: ($sizeValue / $baseFont) + rem;
+   font-size: percentage($sizeValue / $fz_pc);
+}
+
+@function vw($design_width_psd) {
+   $vw: $design_width_psd / $design_width_sp * 100;
+   @return #{$vw}vw;
+}
+
+@function rem($design_px) {
+  $rem : $design_px / 10;
+  @return $rem + rem;
+}
+
+// breakpoint -------------------------------------
+@mixin pc_lg {
+   @media screen and (min-width: $tb + 1) {
+      @content;
+   }
+}
+
+@mixin pc {
+   @media screen and (min-width: $sp + 1) {
+      @content;
+   }
+}
+
+@mixin tb {
+   @media screen and (min-width: $sp + 1) and (max-width: $tb) {
+      @content;
+   }
+}
+
+@mixin sp {
+   @media screen and (max-width: $sp) {
+      @content;
+   }
+}
+
+@mixin clearfix() {
+
+   &::before,
+   &::after {
+      content: '';
+      display: block;
+   }
+
+   &::after {
+      clear: both;
+   }
+}
+
+@mixin fz($font-size, $line-height) {
+   font-size: #{$font-size/10}rem;
+   line-height: #{$line-height/$font-size};
+}

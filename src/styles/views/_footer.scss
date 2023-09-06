@@ -1,0 +1,43 @@
+/* css - footer
+-----------------------------------------------------*/
+.page-footer {
+	background: #7db827;
+	padding: 1rem 0;
+}
+.copyright {
+	font-size: 1.2rem;
+	text-align: center;
+	display: block;
+	font-weight: 300;
+	color: #fff;
+}
+.pagetop {
+	display: none;
+	position: fixed;
+	right: 0;
+	bottom: 4.1rem;
+	cursor: pointer;
+	z-index: 8;
+	background: #7db827;
+	line-height: 1;
+	padding: 26px 20px;
+	&:hover {
+		opacity: .75;
+	}
+}
+@media screen and (max-width: 768px) {
+	.page-footer {
+		padding: .7rem 0;
+	}
+	.copyright {
+		font-size: 1.1rem;
+	}
+	.pagetop {
+		bottom: 3rem;
+		padding: 15px 10px;
+		img {
+			max-width: 15px;
+			height: auto;
+		}
+	}
+}
