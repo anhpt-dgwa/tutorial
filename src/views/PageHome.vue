@@ -24,18 +24,5 @@ export default {
     SectionRecruit,
     SectionContact
   },
-  data() {
-    
-  },
-  computed: {
-    
-  },
-  methods: {
-    
-  }
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

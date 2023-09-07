@@ -2,7 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import PageHome from "@/views/PageHome.vue";
 import PageAbout from "@/views/PageAbout.vue";
 import PageService from "@/views/PageService.vue";
-import PageBusiness from "@/views/PageBusiness.vue";
+import PagePartner from "@/views/PagePartner.vue";
 import PageRecruit from "@/views/PageRecruit.vue";
 import PageContact from "@/views/PageContact.vue";
 
@@ -23,9 +23,9 @@ const routes = [
     component: PageService,
   },
   {
-    path: "/business",
-    name: "PageBusiness",
-    component: PageBusiness,
+    path: "/partner",
+    name: "PagePartner",
+    component: PagePartner,
   },
   {
     path: "/recruit",

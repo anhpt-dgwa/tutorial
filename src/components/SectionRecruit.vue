@@ -1,7 +1,7 @@
 <template>
   <section id="recruit" class="section section-recruit">
     <div class="recruit-bg js-rellax" data-rellax-speed="1">
-      <div style="background-image: url(../assets/recruit-img.jpg)"><img src="../assets/recruit-img.jpg" alt=""></div>
+      <div><img src="../assets/recruit-img.jpg" alt=""></div>
     </div>
     <div class="container">
       <div class="section-title white animation">

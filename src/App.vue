@@ -1,13 +1,5 @@
 <template>
-  <div class="main-visual">
-    <figure class="slider-item item01"><img src="./assets/mv01.jpg" alt=""></figure>
-    <figure class="slider-item item02"><img src="./assets/mv02.jpg" alt=""></figure>
-    <div class="main-copy">
-      <h1 class="site-head">ベストオフショアパートナー</h1>
-      <p class="site-description">国内トップクラスのデジタル制作会社出身者とシステ<br class="only-sp">ムベンター出身者の<br class="only-pc">
-        タッグにより、<br class="only-sp">「制作者視点」でのWeb領域のトータルソリューションを<br>「ジャパンクオリティ」で提供しております。</p>
-    </div>
-  </div>
+  <MainVisual v-if="$route.name == 'PageHome'" />
   <Header />
   <router-view />
   <Footer />
@@ -16,6 +8,7 @@
 
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
+import MainVisual from './components/MainVisual.vue';
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 
@@ -27,8 +20,8 @@ export default {
   components: {
     Header,
     Footer,
-    //HelloWorld
-  },
+    MainVisual
+},
 }
 </script>
 
@@ -42,4 +35,10 @@ export default {
 //   color: #2c3e50;
 //   margin-top: 60px;
 // }
+.p-sub {
+  min-height: calc(100vh - 124.984px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

@@ -7,25 +7,25 @@
       </div>
       <div class="contact-wrap">
         <div class="contact-col contact-form animation">
-          <form>
+          <form @submit.prevent="submit">
             <dl class="form-control">
               <dt class="form-control_lbl">お名前</dt>
               <dd class="form-control_ctn">
-                <p><span>姓</span><input type="text" name="first-name" class="ipt ipt-sm"></p>
-                <p><span>姓</span><input type="text" name="last-name" class="ipt ipt-sm"></p>
+                <p><span>姓</span><input type="text" v-model="form.first_name" class="ipt ipt-sm"></p>
+                <p><span>姓</span><input type="text" v-model="form.last_name" class="ipt ipt-sm"></p>
               </dd>
             </dl>
             <dl class="form-control">
               <dt class="form-control_lbl">貴社名</dt>
-              <dd class="form-control_ctn"><input type="text" name="cpn-name" class="ipt"></dd>
+              <dd class="form-control_ctn"><input type="text" v-model="form.cpn_name" class="ipt"></dd>
             </dl>
             <dl class="form-control">
               <dt class="form-control_lbl">メールアドレス</dt>
-              <dd class="form-control_ctn"><input type="email" name="email" class="ipt" required></dd>
+              <dd class="form-control_ctn"><input type="email" v-model="form.email" class="ipt" required></dd>
             </dl>
             <dl class="form-control">
               <dt class="form-control_lbl">お問い合わせ内容</dt>
-              <dd class="form-control_ctn"><textarea name="message" class="are"></textarea></dd>
+              <dd class="form-control_ctn"><textarea v-model="form.message" class="are"></textarea></dd>
             </dl>
             <div class="form-control">
               <p class="form-control_ctn"><button type="submit" class="btn btn-submit"><span>送信する</span></button></p>
@@ -47,3 +47,25 @@
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      form: {
+        first_name: '',
+        last_name: '',
+        cpn_name: '',
+        email: '',
+        message: ''
+      }
+    }
+  },
+  methods: {
+    async submit() {
+      this.$emit('submit', this.form),
+      console.log(this.form);
+    }
+  }
+}
+</script>
