@@ -6,3 +6,9 @@
   </footer>
   <span class="pagetop"><img src="../assets/pagetop.png" alt="pagetop"></span>
 </template>
+
+<script>
+export default {
+  name: 'FooterItem',
+}
+</script>

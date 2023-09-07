@@ -7,7 +7,7 @@
       </div>
       <p class="service-head animation">今やオフショア開発は、ほとんどすべての<br class="only-sp">デジタル制作に対応可能です。</p>
       <ul class="service">
-        <li v-for="item in services" class="service-item animation">
+        <li v-for="item in services" :key="item.id" class="service-item animation">
           <div class="service-item_inner">
               <h3 class="service-item_title">{{ item.title }}</h3>
               <img v-bind:src="item.img" v-bind:alt="item.title">
