@@ -1,7 +1,7 @@
 <template>
   <header class="page-header">
     <div class="site-logo">
-      <a :href="'../'"><img src="../assets/logo.png" alt="IF Vietnam Co.,Ltd"></a>
+      <a :href="'./'"><img src="../assets/logo.png" alt="IF Vietnam Co.,Ltd"></a>
     </div>
     <nav class="gnav">
       <ul class="menu">
